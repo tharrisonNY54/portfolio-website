@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trey Harrison • Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio site for Trey Harrison, a computer science student seeking internships."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="#top" class="logo">TH</a>
+      <nav class="site-nav" aria-label="Site navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+        <ul id="primary-navigation" class="nav-list" data-open="false">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section id="hero" class="hero section">
+        <div class="hero__content">
+          <span class="eyebrow">Hello, I'm</span>
+          <h1 class="hero__title">Trey Harrison</h1>
+          <p class="hero__subtitle">
+            Computer science sophomore crafting intuitive products and pursuing internship opportunities for Summer
+            2026.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#projects">View Projects</a>
+            <a class="button button--ghost" href="#contact">Get in Touch</a>
+          </div>
+        </div>
+        <div class="hero__highlight">
+          <p>Building user-first solutions across web, mobile, and data-driven projects.</p>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="section__header">
+          <h2>About</h2>
+          <span class="section__spark">01</span>
+        </div>
+        <div class="section__body" data-section="about"></div>
+      </section>
+
+      <section id="skills" class="section section--surface">
+        <div class="section__header">
+          <h2>Skills</h2>
+          <span class="section__spark">02</span>
+        </div>
+        <div class="section__body" data-section="skills"></div>
+      </section>
+
+      <section id="experience" class="section">
+        <div class="section__header">
+          <h2>Experience</h2>
+          <span class="section__spark">03</span>
+        </div>
+        <div class="section__body" data-section="experience"></div>
+      </section>
+
+      <section id="projects" class="section section--surface">
+        <div class="section__header">
+          <h2>Projects</h2>
+          <span class="section__spark">04</span>
+        </div>
+        <div class="section__body" data-section="projects"></div>
+      </section>
+
+      <section id="resume" class="section">
+        <div class="section__header">
+          <h2>Resume</h2>
+          <span class="section__spark">05</span>
+        </div>
+        <div class="section__body resume-cta">
+          <p>
+            Download my current resume to explore my coursework, technical experience, and leadership activities in
+            detail.
+          </p>
+          <a class="button button--primary" href="assets/Trey_Harrison_Resume.pdf" download
+            >Download Resume</a
+          >
+        </div>
+      </section>
+
+      <section id="contact" class="section section--surface">
+        <div class="section__header">
+          <h2>Contact</h2>
+          <span class="section__spark">06</span>
+        </div>
+        <div class="section__body contact">
+          <p>
+            I’m excited to connect with teams building impactful technology. Reach out to talk about internships, product
+            collaborations, or ideas you’re exploring.
+          </p>
+          <a class="button button--primary" href="mailto:trey.harrison@example.com">Email Me</a>
+          <div class="contact__links">
+            <a href="https://github.com/tharrisonNY54">GitHub</a>
+            <a href="https://www.linkedin.com/in/trey-harrison/">LinkedIn</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Trey Harrison. Built to learn, iterate, and share.</p>
+    </footer>
+
+    <script src="data/content.js"></script>
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>
+

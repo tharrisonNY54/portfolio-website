@@ -191,11 +191,37 @@ const enableScrollHints = () => {
   });
 };
 
+const setupSmoothButtonScroll = () => {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const targetId = link.getAttribute('href');
+      if (!targetId || targetId.length === 0 || targetId === '#') return;
+
+      const targetElement = document.querySelector(targetId);
+      if (!targetElement) return;
+
+      event.preventDefault();
+
+      if (link.classList.contains('button')) {
+        link.classList.add('is-pressed');
+        window.setTimeout(() => link.classList.remove('is-pressed'), 650);
+      }
+
+      targetElement.scrollIntoView({
+        behavior: prefersReducedMotion.matches ? 'auto' : 'smooth',
+        block: 'start',
+      });
+    });
+  });
+};
+
 createAboutSection();
 createSkillsSection();
 createExperienceSection();
 createProjectsSection();
 setContactSection();
 enableScrollHints();
-
+setupSmoothButtonScroll();
 

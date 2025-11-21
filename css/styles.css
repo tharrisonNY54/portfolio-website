@@ -154,13 +154,107 @@ a {
   gap: 1rem;
 }
 
-.hero__highlight {
-  padding: 2.5rem;
-  background: linear-gradient(130deg, rgba(249, 115, 160, 0.18), rgba(250, 204, 107, 0.22));
-  border: 1px solid rgba(249, 115, 160, 0.28);
+.hero__volumetric {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.volumetric-intro {
+  padding: 1.5rem;
+  background: rgba(18, 22, 41, 0.6);
+  border: 1px solid rgba(249, 115, 160, 0.15);
+  border-radius: var(--radius-md);
+}
+
+.volumetric-intro__text {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.volumetric-player {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  min-height: 400px;
   border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #000;
+  border: 1px solid rgba(249, 115, 160, 0.2);
   box-shadow: var(--shadow-soft);
-  font-size: 1.05rem;
+}
+
+.volumetric-player__container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.volumetric-player__iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #000;
+}
+
+.volumetric-player__fallback {
+  display: none;
+  padding: 2rem;
+  text-align: center;
+  color: var(--color-muted);
+  max-width: 400px;
+}
+
+.volumetric-player__fallback.show {
+  display: block;
+}
+
+.volumetric-player__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  color: var(--color-accent);
+}
+
+.volumetric-player__play:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  opacity: 0.9;
+}
+
+.volumetric-player__play:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.volumetric-player__play.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+@media (max-width: 768px) {
+  .volumetric-player {
+    min-height: 350px;
+  }
+  
+  .volumetric-intro {
+    padding: 1.25rem;
+  }
+  
+  .volumetric-intro__text {
+    font-size: 0.95rem;
+  }
 }
 
 .section {

@@ -217,11 +217,54 @@ const setupSmoothButtonScroll = () => {
   });
 };
 
+const setupVolumetricPlayer = () => {
+  const playButton = document.getElementById('volumetric-play');
+  const iframe = document.getElementById('volumetric-iframe');
+  const container = document.getElementById('volumetric-container');
+  const fallback = container?.querySelector('.volumetric-player__fallback');
+  
+  if (!playButton || !iframe || !container) return;
+
+  // Load the 8th Wall experience when play button is clicked
+  playButton.addEventListener('click', () => {
+    const shortlink = 'https://8th.io/hf5xb';
+    
+    // Load iframe with 8th Wall shortlink
+    iframe.src = shortlink;
+    iframe.style.display = 'block';
+    
+    // Hide play button with animation
+    setTimeout(() => {
+      playButton.classList.add('hidden');
+    }, 200);
+    
+    // Hide fallback if it was showing
+    if (fallback) {
+      setTimeout(() => {
+        fallback.classList.remove('show');
+      }, 500);
+    }
+  });
+
+  // Show subtle fallback message only if WebXR is not available and not mobile
+  // (but still allow play since desktop can view with black background)
+  const hasWebXR = 'xr' in navigator;
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  
+  // Only show fallback as a subtle hint for desktop browsers without WebXR
+  // It won't prevent playback, just inform users
+  if (!hasWebXR && !isMobile && fallback) {
+    // Show it subtly - could fade in after a delay or keep hidden until after play
+    // For now, we'll keep it available but not prominent
+  }
+};
+
 createAboutSection();
 createSkillsSection();
 createExperienceSection();
 createProjectsSection();
 setContactSection();
 enableScrollHints();
+setupVolumetricPlayer();
 setupSmoothButtonScroll();
 

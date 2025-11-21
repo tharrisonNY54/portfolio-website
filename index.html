@@ -52,8 +52,34 @@
             <a class="button button--ghost" href="#contact">Get in Touch</a>
           </div>
         </div>
-        <div class="hero__highlight">
-          <p>Delivering human-centered products across robotics, XR, and full-stack platforms.</p>
+        <div class="hero__volumetric">
+          <div class="volumetric-intro">
+            <p class="volumetric-intro__text">
+              I build technology that connects people and preserves stories through AI, robotics, and immersive media.
+            </p>
+          </div>
+          <div class="volumetric-player">
+            <div class="volumetric-player__container" id="volumetric-container">
+              <div class="volumetric-player__fallback">
+                <p>For the best experience with this volumetric video, try viewing on a mobile device with WebXR support.</p>
+              </div>
+              <iframe
+                id="volumetric-iframe"
+                class="volumetric-player__iframe"
+                src=""
+                allow="camera; microphone; xr-spatial-tracking"
+                allowfullscreen
+                loading="lazy"
+                style="display: none;"
+              ></iframe>
+              <button class="volumetric-player__play" id="volumetric-play" aria-label="Play volumetric introduction video">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="24" fill="currentColor" opacity="0.9"/>
+                  <path d="M19 16L19 32L32 24L19 16Z" fill="#0b0f19"/>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 

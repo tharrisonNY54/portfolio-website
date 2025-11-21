@@ -225,13 +225,54 @@ const setupVolumetricPlayer = () => {
   
   if (!playButton || !iframe || !container) return;
 
+  // Ensure container stays constrained
+  const playerElement = container.closest('.volumetric-player');
+  if (playerElement) {
+    // Force constraints on the player container
+    playerElement.style.width = 'min(100%, 280px)';
+    playerElement.style.maxWidth = '280px';
+    playerElement.style.maxHeight = 'min(500px, 50vh)';
+    playerElement.style.overflow = 'hidden';
+  }
+
   // Load the 8th Wall experience when play button is clicked
   playButton.addEventListener('click', () => {
     const shortlink = 'https://8th.io/hf5xb';
     
+    // Enforce size constraints on iframe before loading
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.maxWidth = '100%';
+    iframe.style.maxHeight = '100%';
+    iframe.style.overflow = 'hidden';
+    
     // Load iframe with 8th Wall shortlink
     iframe.src = shortlink;
     iframe.style.display = 'block';
+    
+    // Keep enforcing constraints after iframe loads
+    iframe.addEventListener('load', () => {
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      iframe.style.maxWidth = '100%';
+      iframe.style.maxHeight = '100%';
+      
+      // Try to constrain any fullscreen elements inside
+      try {
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+        if (iframeDoc) {
+          const iframeBody = iframeDoc.body;
+          if (iframeBody) {
+            iframeBody.style.maxWidth = '100%';
+            iframeBody.style.maxHeight = '100%';
+            iframeBody.style.overflow = 'hidden';
+          }
+        }
+      } catch (e) {
+        // Cross-origin restriction - can't access iframe content
+        // This is expected with 8th.io domain
+      }
+    });
     
     // Hide play button with animation
     setTimeout(() => {

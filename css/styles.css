@@ -158,6 +158,8 @@ a {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  max-width: 100%;
+  width: 100%;
 }
 
 .volumetric-intro {
@@ -176,17 +178,18 @@ a {
 
 .volumetric-player {
   position: relative;
-  width: 100%;
-  max-width: 350px;
+  width: min(100%, 280px);
   aspect-ratio: 9 / 16;
   height: auto;
-  max-height: 600px;
+  max-height: min(500px, 50vh);
   margin: 0 auto;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: #000;
   border: 1px solid rgba(249, 115, 160, 0.2);
   box-shadow: var(--shadow-soft);
+  transform: scale(1);
+  transform-origin: center;
 }
 
 .volumetric-player__container {
@@ -196,13 +199,32 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .volumetric-player__iframe {
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
   border: none;
   background: #000;
+  transform: scale(1);
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+/* Ensure iframe content doesn't expand beyond container */
+.volumetric-player__iframe canvas,
+.volumetric-player__iframe video {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
 }
 
 .volumetric-player__fallback {
@@ -248,8 +270,8 @@ a {
 
 @media (max-width: 768px) {
   .volumetric-player {
-    max-width: 280px;
-    max-height: 500px;
+    width: min(100%, 240px);
+    max-height: min(430px, 45vh);
   }
   
   .volumetric-intro {

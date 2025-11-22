@@ -225,12 +225,13 @@ const setupVolumetricPlayer = () => {
   
   if (!playButton || !iframe || !container) return;
 
-  // Ensure container stays constrained
+  // Ensure container stays constrained - wider but fixed height
   const playerElement = container.closest('.volumetric-player');
   if (playerElement) {
-    // Force constraints on the player container - much smaller size
-    playerElement.style.width = 'min(100%, 160px)';
-    playerElement.style.maxWidth = '160px';
+    // Force constraints on the player container - wider width, fixed height
+    playerElement.style.width = 'min(100%, 300px)';
+    playerElement.style.maxWidth = '300px';
+    playerElement.style.height = 'min(285px, 35vh)';
     playerElement.style.maxHeight = 'min(285px, 35vh)';
     playerElement.style.overflow = 'hidden';
     playerElement.style.contain = 'layout style paint';
@@ -240,10 +241,10 @@ const setupVolumetricPlayer = () => {
   playButton.addEventListener('click', () => {
     const shortlink = 'https://8th.io/hf5xb';
     
-    // Enforce size constraints on iframe before loading
+    // Enforce size constraints on iframe before loading - wider width, fixed height
     iframe.style.width = '100%';
     iframe.style.height = '100%';
-    iframe.style.maxWidth = '160px';
+    iframe.style.maxWidth = '300px';
     iframe.style.maxHeight = '285px';
     iframe.style.minWidth = '0';
     iframe.style.minHeight = '0';
@@ -258,8 +259,8 @@ const setupVolumetricPlayer = () => {
     iframe.addEventListener('load', () => {
       iframe.style.width = '100%';
       iframe.style.height = '100%';
-      iframe.style.maxWidth = '100%';
-      iframe.style.maxHeight = '100%';
+      iframe.style.maxWidth = '300px';
+      iframe.style.maxHeight = '285px';
       
       // Try to constrain any fullscreen elements inside
       try {

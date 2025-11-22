@@ -225,14 +225,14 @@ const setupVolumetricPlayer = () => {
   
   if (!playButton || !iframe || !container) return;
 
-  // Ensure container stays constrained - wider but fixed height
+  // Ensure container stays constrained - large and prominent
   const playerElement = container.closest('.volumetric-player');
   if (playerElement) {
-    // Force constraints on the player container - wider width, fixed height
-    playerElement.style.width = 'min(100%, 300px)';
-    playerElement.style.maxWidth = '300px';
-    playerElement.style.height = 'min(285px, 35vh)';
-    playerElement.style.maxHeight = 'min(285px, 35vh)';
+    // Force constraints on the player container - large size for prominence
+    playerElement.style.width = '100%';
+    playerElement.style.maxWidth = '100%';
+    playerElement.style.height = 'min(600px, 70vh)';
+    playerElement.style.maxHeight = 'min(600px, 70vh)';
     playerElement.style.overflow = 'hidden';
     playerElement.style.contain = 'layout style paint';
   }
@@ -241,11 +241,11 @@ const setupVolumetricPlayer = () => {
   playButton.addEventListener('click', () => {
     const shortlink = 'https://8th.io/hf5xb';
     
-    // Enforce size constraints on iframe before loading - wider width, fixed height
+    // Enforce size constraints on iframe before loading - large and prominent
     iframe.style.width = '100%';
     iframe.style.height = '100%';
-    iframe.style.maxWidth = '300px';
-    iframe.style.maxHeight = '285px';
+    iframe.style.maxWidth = '100%';
+    iframe.style.maxHeight = 'min(600px, 70vh)';
     iframe.style.minWidth = '0';
     iframe.style.minHeight = '0';
     iframe.style.overflow = 'hidden';
@@ -259,8 +259,8 @@ const setupVolumetricPlayer = () => {
     iframe.addEventListener('load', () => {
       iframe.style.width = '100%';
       iframe.style.height = '100%';
-      iframe.style.maxWidth = '300px';
-      iframe.style.maxHeight = '285px';
+      iframe.style.maxWidth = '100%';
+      iframe.style.maxHeight = 'min(600px, 70vh)';
       
       // Try to constrain any fullscreen elements inside
       try {

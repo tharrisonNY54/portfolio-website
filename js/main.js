@@ -144,18 +144,21 @@ const createProjectsSection = () => {
 
     const links = document.createElement('div');
     links.className = 'project-card__links';
-    if (project.links.github) {
-      const github = document.createElement('a');
-      github.href = project.links.github;
-      github.textContent = 'Code';
-      github.setAttribute('target', '_blank');
-      github.setAttribute('rel', 'noreferrer');
-      links.appendChild(github);
-    }
+    
+    // Always add GitHub link button
+    const github = document.createElement('a');
+    github.href = project.links.github || 'https://github.com/tharrisonNY54';
+    github.textContent = 'View on GitHub';
+    github.className = 'button button--primary';
+    github.setAttribute('target', '_blank');
+    github.setAttribute('rel', 'noreferrer');
+    links.appendChild(github);
+    
     if (project.links.demo) {
       const demo = document.createElement('a');
       demo.href = project.links.demo;
       demo.textContent = 'Demo';
+      demo.className = 'button button--ghost';
       demo.setAttribute('target', '_blank');
       demo.setAttribute('rel', 'noreferrer');
       links.appendChild(demo);

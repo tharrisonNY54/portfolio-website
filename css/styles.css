@@ -188,7 +188,7 @@ a {
   margin: 0;
   border-radius: var(--radius-lg);
   overflow: hidden !important;
-  background: #000;
+  background: #ffffff;
   border: 1px solid rgba(249, 115, 160, 0.2);
   box-shadow: var(--shadow-soft);
   transform: scale(1);
@@ -217,7 +217,7 @@ a {
   min-width: 0 !important;
   min-height: 0 !important;
   border: none;
-  background: #000;
+  background: #ffffff;
   transform: scale(1);
   object-fit: contain;
   position: absolute;

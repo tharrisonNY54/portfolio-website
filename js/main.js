@@ -1,10 +1,5 @@
 import { about, skills, experience, projects, contact } from '../data/content.js';
 
-const yearEl = document.getElementById('year');
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
-}
-
 const navToggle = document.querySelector('.nav-toggle');
 const navList = document.querySelector('.nav-list');
 

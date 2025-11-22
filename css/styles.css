@@ -1,10 +1,10 @@
 :root {
-  --color-background: #000000;
-  --color-surface: #1a1a1a;
-  --color-surface-alt: #2a2a2a;
+  --color-background: #0f0f0f;
+  --color-surface: #1f1f1f;
+  --color-surface-alt: #2f2f2f;
   --color-accent: #ffffff;
   --color-accent-secondary: #00aaff;
-  --color-muted: #9aa4c2;
+  --color-muted: #b0b0b0;
   --color-text: #ffffff;
   --color-text-strong: #ffffff;
   --radius-md: 16px;
@@ -21,7 +21,7 @@
 
 body {
   margin: 0;
-  background: #000000;
+  background: #0f0f0f;
   color: var(--color-text);
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
@@ -58,7 +58,7 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 5vw;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(15, 15, 15, 0.95);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -312,7 +312,7 @@ a {
 }
 
 .section--surface {
-  background: rgba(26, 26, 26, 0.6);
+  background: rgba(31, 31, 31, 0.7);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -355,7 +355,7 @@ a {
 
 .about__item {
   padding: 1.5rem;
-  background: rgba(26, 26, 26, 0.7);
+  background: rgba(31, 31, 31, 0.75);
   border: 1px solid rgba(154, 164, 194, 0.14);
   border-radius: var(--radius-md);
   transition: transform 0.3s ease, border-color 0.3s ease;
@@ -405,8 +405,8 @@ a {
 .experience__item {
   padding: 1.75rem;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(154, 164, 194, 0.14);
-  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(176, 176, 176, 0.2);
+  background: rgba(31, 31, 31, 0.85);
 }
 
 .experience__item header {
@@ -448,8 +448,8 @@ a {
   gap: 1rem;
   padding: 1.75rem;
   border-radius: var(--radius-md);
-  background: rgba(26, 26, 26, 0.8);
-  border: 1px solid rgba(154, 164, 194, 0.14);
+  background: rgba(31, 31, 31, 0.85);
+  border: 1px solid rgba(176, 176, 176, 0.2);
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
@@ -587,7 +587,7 @@ a {
     flex-direction: column;
     padding: 1.5rem;
     gap: 1rem;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(15, 15, 15, 0.98);
     border: 1px solid rgba(148, 163, 184, 0.1);
     border-radius: var(--radius-md);
     transform: translateY(-10px);

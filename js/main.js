@@ -242,7 +242,9 @@ const setupVolumetricPlayer = () => {
 
   // Load the 8th Wall experience when play button is clicked
   playButton.addEventListener('click', () => {
-    const shortlink = 'https://8th.io/hf5xb';
+    // Try adding parameters to disable placement and fix position
+    // Note: These parameters may not work - you may need to configure in 8th Wall editor
+    const shortlink = 'https://8th.io/hf5xb?disablePlacement=true&fixedPosition=true';
     
     // Enforce size constraints on iframe before loading - large and prominent
     iframe.style.width = '100%';

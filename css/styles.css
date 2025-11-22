@@ -117,17 +117,18 @@ a {
 .hero {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
-  padding: 4rem 5vw 3rem;
+  padding: 2rem 5vw 2rem;
   min-height: auto;
-  max-height: 100vh;
+  max-height: calc(100vh - 100px);
+  overflow: visible;
 }
 
 .hero__content {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .eyebrow {
@@ -139,8 +140,9 @@ a {
 
 .hero__title {
   margin: 0;
-  font-size: clamp(2.75rem, 4vw + 1rem, 4.5rem);
+  font-size: clamp(2.25rem, 3.5vw + 0.75rem, 3.5rem);
   color: var(--color-text-strong);
+  line-height: 1.1;
 }
 
 .hero__subtitle {
@@ -166,52 +168,58 @@ a {
 }
 
 .volumetric-intro {
-  padding: 1rem 1.25rem;
+  padding: 0.75rem 1rem;
   background: rgba(18, 22, 41, 0.6);
   border: 1px solid rgba(249, 115, 160, 0.15);
   border-radius: var(--radius-md);
   width: 100%;
-  max-width: 200px;
+  max-width: 160px;
 }
 
 .volumetric-intro__text {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--color-text);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .volumetric-player {
   position: relative;
-  width: min(100%, 200px);
+  width: min(100%, 160px);
   aspect-ratio: 9 / 16;
   height: auto;
-  max-height: min(360px, 40vh);
+  max-height: min(285px, 35vh);
   margin: 0 auto;
   border-radius: var(--radius-lg);
-  overflow: hidden;
+  overflow: hidden !important;
   background: #000;
   border: 1px solid rgba(249, 115, 160, 0.2);
   box-shadow: var(--shadow-soft);
   transform: scale(1);
   transform-origin: center;
+  contain: layout style paint;
 }
 
 .volumetric-player__container {
   position: relative;
   width: 100%;
   height: 100%;
+  max-width: 160px;
+  max-height: 285px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: hidden !important;
+  contain: strict;
 }
 
 .volumetric-player__iframe {
   width: 100% !important;
   height: 100% !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
+  max-width: 160px !important;
+  max-height: 285px !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
   border: none;
   background: #000;
   transform: scale(1);
@@ -219,7 +227,8 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  overflow: hidden;
+  overflow: hidden !important;
+  contain: strict;
 }
 
 /* Ensure iframe content doesn't expand beyond container */
@@ -275,23 +284,34 @@ a {
 
 @media (max-width: 768px) {
   .hero {
-    padding: 3rem 5vw 2rem;
-    gap: 1.5rem;
+    padding: 1.5rem 5vw 1.5rem;
+    gap: 1rem;
+    max-height: calc(100vh - 80px);
   }
   
   .volumetric-player {
-    width: min(100%, 180px);
-    max-height: min(320px, 35vh);
+    width: min(100%, 140px);
+    max-height: min(250px, 30vh);
+  }
+  
+  .volumetric-player__container {
+    max-width: 140px;
+    max-height: 250px;
+  }
+  
+  .volumetric-player__iframe {
+    max-width: 140px !important;
+    max-height: 250px !important;
   }
   
   .volumetric-intro {
-    padding: 0.875rem 1rem;
-    max-width: 180px;
+    padding: 0.625rem 0.875rem;
+    max-width: 140px;
   }
   
   .volumetric-intro__text {
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.85rem;
+    line-height: 1.4;
   }
 }
 

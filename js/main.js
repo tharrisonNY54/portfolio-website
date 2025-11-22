@@ -228,11 +228,12 @@ const setupVolumetricPlayer = () => {
   // Ensure container stays constrained
   const playerElement = container.closest('.volumetric-player');
   if (playerElement) {
-    // Force constraints on the player container - smaller size
-    playerElement.style.width = 'min(100%, 200px)';
-    playerElement.style.maxWidth = '200px';
-    playerElement.style.maxHeight = 'min(360px, 40vh)';
+    // Force constraints on the player container - much smaller size
+    playerElement.style.width = 'min(100%, 160px)';
+    playerElement.style.maxWidth = '160px';
+    playerElement.style.maxHeight = 'min(285px, 35vh)';
     playerElement.style.overflow = 'hidden';
+    playerElement.style.contain = 'layout style paint';
   }
 
   // Load the 8th Wall experience when play button is clicked
@@ -242,9 +243,12 @@ const setupVolumetricPlayer = () => {
     // Enforce size constraints on iframe before loading
     iframe.style.width = '100%';
     iframe.style.height = '100%';
-    iframe.style.maxWidth = '100%';
-    iframe.style.maxHeight = '100%';
+    iframe.style.maxWidth = '160px';
+    iframe.style.maxHeight = '285px';
+    iframe.style.minWidth = '0';
+    iframe.style.minHeight = '0';
     iframe.style.overflow = 'hidden';
+    iframe.style.contain = 'strict';
     
     // Load iframe with 8th Wall shortlink
     iframe.src = shortlink;

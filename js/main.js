@@ -228,10 +228,10 @@ const setupVolumetricPlayer = () => {
   // Ensure container stays constrained
   const playerElement = container.closest('.volumetric-player');
   if (playerElement) {
-    // Force constraints on the player container
-    playerElement.style.width = 'min(100%, 280px)';
-    playerElement.style.maxWidth = '280px';
-    playerElement.style.maxHeight = 'min(500px, 50vh)';
+    // Force constraints on the player container - smaller size
+    playerElement.style.width = 'min(100%, 200px)';
+    playerElement.style.maxWidth = '200px';
+    playerElement.style.maxHeight = 'min(360px, 40vh)';
     playerElement.style.overflow = 'hidden';
   }
 

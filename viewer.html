@@ -38,26 +38,28 @@
     })();
   </script>
 
-  <script src="./external/Videogram/three.min.js"></script>
-  <script src="./external/Videogram/bowser.min.js"></script>
-  <script src="./external/Videogram/twgl-full.min.js"></script>
-  <script src="./external/Videogram/mux.min.js"></script>
-  <script src="./external/Videogram/shaka-player.compiled.js"></script>
-  <!-- Videogram core from CDN so OmniNetwork loads correctly; local copy can cause stack overflow -->
-  <script src="https://dpyy1piv6s0hg.cloudfront.net/JSfiles/Videogram1/videogram-core.min.js" crossorigin="anonymous"></script>
-
+  <!-- GLTFLoader / Tween / Firebase first (matches working 8th Wall head.html) -->
   <script src="https://cdn.rawgit.com/mrdoob/three.js/r123/examples/js/loaders/GLTFLoader.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-functions.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
 
-  <script src="./external/8thwall-modules/placeground-scene-module.v15.js"></script>
-  <script src="./external/8thwall-modules/transform-controls.v5.js"></script>
-  <script src="./external/8thwall-modules/buttons.v7.js"></script>
-  <script src="./external/8thwall-modules/show-video.v2.js"></script>
-  <script src="./external/8thwall-modules/show-image.js"></script>
-  <script src="./external/8thwall-modules/multiple-holograms.v5.js"></script>
+  <!-- All Videogram from CloudFront - same source as videogram-core to avoid .default mismatch -->
+  <script src="https://dpyy1piv6s0hg.cloudfront.net/JSfiles/Videogram/bowser.min.js"></script>
+  <script src="https://dpyy1piv6s0hg.cloudfront.net/JSfiles/Videogram/twgl-full.min.js"></script>
+  <script src="https://dpyy1piv6s0hg.cloudfront.net/JSfiles/Videogram/mux.min.js"></script>
+  <script src="https://dpyy1piv6s0hg.cloudfront.net/JSfiles/Videogram/shaka-player.compiled.js"></script>
+  <script src="https://dpyy1piv6s0hg.cloudfront.net/JSfiles/Videogram/three.min.js"></script>
+  <script src="https://dpyy1piv6s0hg.cloudfront.net/JSfiles/Videogram1/videogram-core.min.js" crossorigin="anonymous"></script>
+
+  <!-- 8th Wall modules from CloudFront (same as working head.html) -->
+  <script src="https://dpyy1piv6s0hg.cloudfront.net/JSfiles/8thwall/placeground-scene-module.v15.js" crossorigin="anonymous"></script>
+  <script src="https://dpyy1piv6s0hg.cloudfront.net/JSfiles/8thwall/transform-controls.v5.js"></script>
+  <script src="https://dpyy1piv6s0hg.cloudfront.net/JSfiles/8thwall/buttons.v7.js"></script>
+  <script src="https://dpyy1piv6s0hg.cloudfront.net/JSfiles/8thwall/show-video.v2.js"></script>
+  <script src="https://dpyy1piv6s0hg.cloudfront.net/JSfiles/8thwall/show-image.js"></script>
+  <script src="https://dpyy1piv6s0hg.cloudfront.net/JSfiles/8thwall/multiple-holograms.v4.js"></script>
 
   <script>window.remoteHeadReady = Promise.resolve();</script>
 </head>

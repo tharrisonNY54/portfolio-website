@@ -43,7 +43,8 @@
   <script src="./external/Videogram/twgl-full.min.js"></script>
   <script src="./external/Videogram/mux.min.js"></script>
   <script src="./external/Videogram/shaka-player.compiled.js"></script>
-  <script src="./external/Videogram/videogram-core.min.js"></script>
+  <!-- Videogram core from CDN so OmniNetwork loads correctly; local copy can cause stack overflow -->
+  <script src="https://dpyy1piv6s0hg.cloudfront.net/JSfiles/Videogram1/videogram-core.min.js" crossorigin="anonymous"></script>
 
   <script src="https://cdn.rawgit.com/mrdoob/three.js/r123/examples/js/loaders/GLTFLoader.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>

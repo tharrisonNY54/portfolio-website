@@ -1,156 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trey Harrison • Portfolio</title>
-    <meta
-      name="description"
-      content="Portfolio site for Trey Harrison, a computer science student seeking internships."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <nav class="site-nav" aria-label="Site navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="nav-toggle__bar"></span>
-          <span class="nav-toggle__bar"></span>
-          <span class="nav-toggle__bar"></span>
-        </button>
-        <ul id="primary-navigation" class="nav-list" data-open="false">
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main id="top">
-      <section id="hero" class="hero section">
-        <div class="hero__content">
-          <span class="eyebrow">Hello, I'm</span>
-          <h1 class="hero__title">Trey Harrison</h1>
-          <p class="hero__subtitle">
-            Honors computer science student at the University of Arizona building AI and immersive experiences that
-            bridge research and real-world storytelling.
-          </p>
-          <div class="hero__actions">
-            <a class="button button--primary" href="#projects">View Projects</a>
-            <a class="button button--ghost" href="#contact">Get in Touch</a>
-          </div>
-        </div>
-        <div class="hero__volumetric">
-          <div class="volumetric-intro">
-            <p class="volumetric-intro__text">
-              I build technology that connects people and preserves stories through AI, robotics, and immersive media.
-            </p>
-          </div>
-          <div class="volumetric-player">
-            <div class="volumetric-player__container" id="volumetric-container">
-              <div class="volumetric-player__fallback">
-                <p>For the best experience with this volumetric video, try viewing on a mobile device with WebXR support.</p>
-              </div>
-              <iframe
-                id="volumetric-iframe"
-                class="volumetric-player__iframe"
-                src=""
-                allow="camera; microphone; xr-spatial-tracking"
-                allowfullscreen
-                loading="lazy"
-                style="display: none;"
-              ></iframe>
-              <button class="volumetric-player__play" id="volumetric-play" aria-label="Play volumetric introduction video">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="24" cy="24" r="24" fill="currentColor" opacity="0.9"/>
-                  <path d="M19 16L19 32L32 24L19 16Z" fill="#0b0f19"/>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="section">
-        <div class="section__header">
-          <h2>About</h2>
-        </div>
-        <div class="section__body" data-section="about"></div>
-      </section>
-
-      <section id="projects" class="section section--surface">
-        <div class="section__header">
-          <h2>Projects</h2>
-        </div>
-        <div class="section__body" data-section="projects"></div>
-      </section>
-
-      <section id="experience" class="section">
-        <div class="section__header">
-          <h2>Experience</h2>
-        </div>
-        <div class="section__body" data-section="experience"></div>
-      </section>
-
-      <section id="skills" class="section section--surface">
-        <div class="section__header">
-          <h2>Skills</h2>
-        </div>
-        <div class="section__body" data-section="skills"></div>
-      </section>
-
-      <section id="resume" class="section">
-        <div class="section__header">
-          <h2>Resume</h2>
-        </div>
-        <div class="section__body resume-cta">
-          <p>
-            Download my current resume to explore my coursework, technical experience, and leadership activities in
-            detail.
-          </p>
-          <a class="button button--primary" href="portfolio/assets/Trey_Harrison_Resume.pdf" download="Trey_Harrison_Resume.pdf" target="_blank"
-            >Download Resume</a
-          >
-        </div>
-      </section>
-
-      <section id="contact" class="section section--surface">
-        <div class="section__header">
-          <h2>Contact</h2>
-        </div>
-        <div class="section__body contact">
-          <div class="contact__links">
-            <a class="contact__link" href="mailto:treyh413@outlook.com">
-              <span class="contact__icon">✉</span>
-              <span class="contact__text">treyh413@outlook.com</span>
-            </a>
-            <a class="contact__link" href="https://github.com/tharrisonNY54" target="_blank" rel="noreferrer">
-              <span class="contact__icon">🐙</span>
-              <span class="contact__text">GitHub</span>
-            </a>
-            <a class="contact__link" href="https://www.linkedin.com/in/trey-harrison/" target="_blank" rel="noreferrer">
-              <span class="contact__icon">💼</span>
-              <span class="contact__text">LinkedIn</span>
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-
-    <script src="data/content.js"></script>
-    <script src="js/main.js" type="module"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Holograms</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 480px; margin: 2rem auto; padding: 0 1rem; }
+    h1 { font-size: 1.25rem; }
+    ul { list-style: none; padding: 0; }
+    a { display: block; padding: 0.75rem; margin: 0.5rem 0; background: #1a1a2e; color: #eee; text-decoration: none; border-radius: 8px; }
+    a:hover { background: #16213e; }
+  </style>
+</head>
+<body>
+  <h1>View holograms</h1>
+  <p>Tap a link, then tap the ground in AR to place the hologram.</p>
+  <ul>
+    <li><a href="viewer.html?videoUrl=https://dpyy1piv6s0hg.cloudfront.net/cales/20240131_1233_24.mp4&bytesUrl=https://dpyy1piv6s0hg.cloudfront.net/cales/20240131_1233_24.bytes">20240131_1233_24</a></li>
+    <li><a href="viewer.html?videoUrl=https://dpyy1piv6s0hg.cloudfront.net/cales/20240209_1132_34.mp4&bytesUrl=https://dpyy1piv6s0hg.cloudfront.net/cales/20240209_1132_34.bytes">20240209_1132_34</a></li>
+    <li><a href="viewer.html?videoUrl=https://dpyy1piv6s0hg.cloudfront.net/other/20240301_1105_14.mp4&bytesUrl=https://dpyy1piv6s0hg.cloudfront.net/other/20240301_1105_14.bytes">20240301_1105_14</a></li>
+  </ul>
+</body>
 </html>
-

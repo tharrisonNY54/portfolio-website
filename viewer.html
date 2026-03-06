@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hologram viewer</title>
+  <meta name="8thwall:renderer" content="threejs:123"/>
+  <meta name="8thwall:package" content="@8thwall.xrextras"/>
+  <meta name="8thwall:package" content="@8thwall.landing-page"/>
+
+  <script crossorigin="anonymous" src="./external/xrextras/xrextras.js"></script>
+  <script crossorigin="anonymous" src="./external/landing-page/landing-page.js"></script>
+  <script crossorigin="anonymous" src="./external/xr/xr.js" async="true" data-preload-chunks="face, slam"></script>
+
+  <script>
+    (function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const videoUrl = urlParams.get('videoUrl');
+      const bytesUrl = urlParams.get('bytesUrl');
+      if (!videoUrl || !bytesUrl) {
+        window.location.replace('index.html');
+        return;
+      }
+      const slidesUrl = urlParams.get('slidesUrl') || '';
+      const INPUTS = {
+        videoUrl: videoUrl,
+        bytesUrl: bytesUrl,
+        slidesUrl: slidesUrl,
+        cropSeconds: 1,
+        image: '',
+        imageOrientation: 'vertical',
+        regularImages: [],
+        images360: [],
+        videoUrls: [],
+        bytesUrls: [],
+      };
+      Object.defineProperty(window, 'inputs', { value: INPUTS, writable: false, configurable: false });
+    })();
+  </script>
+
+  <script src="./external/Videogram/three.min.js"></script>
+  <script src="./external/Videogram/bowser.min.js"></script>
+  <script src="./external/Videogram/twgl-full.min.js"></script>
+  <script src="./external/Videogram/mux.min.js"></script>
+  <script src="./external/Videogram/shaka-player.compiled.js"></script>
+  <script src="https://dpyy1piv6s0hg.cloudfront.net/JSfiles/Videogram1/videogram-core.min.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.rawgit.com/mrdoob/three.js/r123/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-functions.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+
+  <script src="./external/8thwall-modules/placeground-scene-module.v15.js"></script>
+  <script src="./external/8thwall-modules/transform-controls.v5.js"></script>
+  <script src="./external/8thwall-modules/buttons.v7.js"></script>
+  <script src="./external/8thwall-modules/show-video.v2.js"></script>
+  <script src="./external/8thwall-modules/show-image.js"></script>
+  <script src="./external/8thwall-modules/multiple-holograms.v5.js"></script>
+
+  <script>window.remoteHeadReady = Promise.resolve();</script>
+</head>
+<body>
+  <script src="bundle.js"></script>
+</body>
+</html>

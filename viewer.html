@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hologram Viewer</title>
+  <meta itemprop="name" content="Hologram Viewer">
+  <meta name="twitter:title" content="Hologram Viewer">
+  <meta property="og:title" content="Hologram Viewer">
+  <meta property="og:site_name" content="Hologram Viewer">
+  <meta name="description" content="">
+  <meta itemprop="description" content="">
+  <meta property="og:description" content="">
+  <meta name="twitter:description" content="">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📷</text></svg>">
+
+  <!-- Inputs and Three.js MUST load first so THREE and GLTFLoader exist before any 8th Wall / bundle code -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const videoUrl = urlParams.get('videoUrl') || '';
+    const bytesUrl = urlParams.get('bytesUrl') || '';
+    const slidesUrl = urlParams.get('slidesUrl') || '';
+    const INPUTS = {
+      videoUrl: videoUrl,
+      bytesUrl: bytesUrl,
+      slidesUrl: slidesUrl,
+      cropSeconds: 1,
+      image: '',
+      imageOrientation: 'vertical',
+      regularImages: [],
+      images360: [],
+      videoUrls: [],
+      bytesUrls: [],
+    };
+    Object.defineProperty(window, 'inputs', {value: INPUTS, writable: false, configurable: false});
+    console.log('✅ Inputs locked and immutable:', window.inputs);
+  </script>
+  <script src="./external/videogram/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.160.0/examples/js/loaders/GLTFLoader.js"></script>
+
+  <script crossorigin="anonymous" src="./external/xrextras/xrextras.js"></script>
+  <script crossorigin="anonymous" src="./external/landing-page/landing-page.js"></script>
+  <script crossorigin="anonymous" src="./external/xr/xr.js" async="true" data-preload-chunks="face, slam"></script>
+
+  <meta name="8thwall:renderer" content="threejs:123"/>
+  <meta name="8thwall:package" content="@8thwall.xrextras"/>
+  <meta name="8thwall:package" content="@8thwall.landing-page"/>
+
+  <!-- Videogram libraries — all local -->
+  <script src="./external/videogram/bowser.min.js"></script>
+  <script src="./external/videogram/twgl-full.min.js"></script>
+  <script src="./external/videogram/mux.min.js"></script>
+  <script src="./external/videogram/shaka-player.compiled.js"></script>
+  <script src="./external/videogram/videogram-core.min.js"></script>
+
+  <!-- External utilities -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-functions.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+
+  <!-- 8th Wall custom modules — all local -->
+  <script src="./external/8thwall-modules/placeground-scene-module.v15.js"></script>
+  <script src="./external/8thwall-modules/transform-controls.v5.js"></script>
+  <script src="./external/8thwall-modules/buttons.v7.js"></script>
+  <script src="./external/8thwall-modules/show-video.v2.js"></script>
+  <script src="./external/8thwall-modules/show-image.js"></script>
+  <script src="./external/8thwall-modules/multiple-holograms.v5.js"></script>
+
+  <script>
+    window.remoteHeadReady = Promise.resolve();
+    console.log('✅ Head scripts loaded - inputs still locked:', window.inputs);
+  </script>
+</head>
+<body>
+  <script src="bundle.js"></script>
+</body>
+</html>

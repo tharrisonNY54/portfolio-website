@@ -35,6 +35,13 @@
     Object.defineProperty(window, 'inputs', {value: INPUTS, writable: false, configurable: false});
     console.log('✅ Inputs locked and immutable:', window.inputs);
   </script>
+  <script>
+    // Safari compatibility: some environments do not expose a global Touch constructor.
+    // Older third-party scripts reference `Touch` directly during feature checks.
+    if (typeof window.Touch === 'undefined') {
+      window.Touch = function Touch() {};
+    }
+  </script>
   <script src="https://dpyy1piv6s0hg.cloudfront.net/JSfiles/Videogram/three.min.js"></script>
   <script src="https://cdn.rawgit.com/mrdoob/three.js/r123/examples/js/loaders/GLTFLoader.js"></script>
 

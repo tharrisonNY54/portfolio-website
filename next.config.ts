@@ -7,9 +7,6 @@ const PERMISSIONS_POLICY =
 const nextConfig: NextConfig = {
   reactStrictMode: false,
   devIndicators: false,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   async headers() {
     return [
       // 8th Wall iframe: no COEP/COOP so it can load cross-origin scripts (CloudFront, CDNs)
